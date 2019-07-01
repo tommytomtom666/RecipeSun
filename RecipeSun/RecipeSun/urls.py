@@ -8,8 +8,8 @@ from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView
 from app import forms, views
 
-import Recipes.views
 
+# Django processes URL patterns in the order they appear in the array
 
 urlpatterns = [
     path('', views.home, name='home'),

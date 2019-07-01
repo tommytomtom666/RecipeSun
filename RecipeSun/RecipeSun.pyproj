@@ -6,6 +6,7 @@
     <RootNamespace>RecipeSun</RootNamespace>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
     <InterpreterId>MSBuild|envRecipeSun|$(MSBuildProjectFullPath)</InterpreterId>
+    <WebBrowserPort>8001</WebBrowserPort>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -22,6 +23,8 @@
     <DjangoSettingsModule>RecipeSun.settings</DjangoSettingsModule>
     <OutputPath>.</OutputPath>
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <PythonRunWebServerCommandType />
+    <PythonDebugWebServerCommandType />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,6 +46,13 @@
     <Compile Include="RecipeSun\settings.py" />
     <Compile Include="RecipeSun\urls.py" />
     <Compile Include="RecipeSun\wsgi.py" />
+    <Compile Include="Recipes\admin.py" />
+    <Compile Include="Recipes\apps.py" />
+    <Compile Include="Recipes\migrations\__init__.py" />
+    <Compile Include="Recipes\models.py" />
+    <Compile Include="Recipes\tests.py" />
+    <Compile Include="Recipes\views.py" />
+    <Compile Include="Recipes\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
@@ -55,8 +65,13 @@
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
     <Folder Include="RecipeSun\" />
+    <Folder Include="Recipes\" />
+    <Folder Include="Recipes\migrations\" />
+    <Folder Include="Recipes\templates\" />
+    <Folder Include="Recipes\templates\Recipes\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Recipes\templates\Recipes\index.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
